@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<!-- Implement a function that makes an element bold and allows the user of the function to optionally do something else with it. -->
+<html lang="en">
+
+<head>
+  <title>Bold element</title>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <section>Hello World</section>
+  <p>Greetings!</p>
+  <script>
+    function makeBold(element, callback) {
+      element.style.fontWeight = 'bold';
+
+      if (callback && typeof callback === 'function') {
+        callback(element);
+      }
+    }
+
+    let sectionElement = document.querySelector('section');
+    makeBold(sectionElement, function (elem) {
+      elem.classList.add('highlight');
+    });
+  </script>
+</body>
+
+</html>

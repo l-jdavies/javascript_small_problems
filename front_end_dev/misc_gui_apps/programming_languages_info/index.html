@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Programming languages</title>
+  <meta charset="utf-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
+  <style>
+    body {
+      background-color: teal;
+    }
+
+    div {
+      background-color: white;
+      padding: 20px;
+    }
+
+
+    a {
+      width: 100px;
+      background-color: teal;
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="display_info">
+  </div>
+</body>
+<script id="language_info" type="text/x-handlebars">
+    <div data-id="{{id}}">
+      <h2>{{name}}</h2>
+      <p>{{shortDescription}}</p>
+      <a href="#" class="more">Show More</a>
+    </div>
+  </script>
+<script src="languages.js"></script>
+
+</html>

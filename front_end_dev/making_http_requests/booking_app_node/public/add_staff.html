@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Add staff member</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script src="/javascripts/add_staff.js"></script>
+</head>
+
+<body>
+  <form action="/api/staff_members" method="POST">
+    <dl>
+      <dt>
+        <label for="email">Email:</label>
+      </dt>
+      <dd>
+        <input type="text" name="email" />
+      </dd>
+      <dt>
+        <label for="name">Name:</label>
+      </dt>
+      <dd>
+        <input type="text" name="name" />
+      </dd>
+    </dl>
+    <input type="submit">
+  </form>
+</body>
+
+</html>

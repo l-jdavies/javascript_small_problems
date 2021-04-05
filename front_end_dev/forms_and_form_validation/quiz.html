@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Multiple choice Quiz</title>
+  <meta charset="utf-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
+  <style>
+    body {
+      background-color: ivory;
+      color: black;
+    }
+
+    button[type="submit"] {
+      background-color: green;
+      color: white;
+      margin-right: 5px;
+    }
+
+    form {
+      margin: 30px 0 0 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 5px;
+    }
+
+    .question {
+      margin: 0 0 10px 0;
+    }
+
+    .question .description {
+      margin: 0 0 10px 0;
+    }
+
+    .result {
+      margin-top: 10px;
+      height: 35px;
+      padding: 5px;
+    }
+
+    .result.incorrect {
+      border: solid red 1px;
+    }
+
+    .result.correct {
+      border: solid green 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Multiple Choice Quiz</h1>
+  <form action="#" method="POST">
+    <fieldset>
+    </fieldset>
+    <button type="submit">Submit Quiz</button><button type="reset">Reset</button>
+  </form>
+</body>
+<script id="question_template" type="text/x-handlebars-template">
+    <div class="question" data-id="{{id}}">
+      <p class="description">Q{{id}}. {{{description}}}</p>
+      {{#each options}}
+        <label>
+          <input name="{{../id}}" type="radio" value="{{.}}" />
+            {{.}}
+        </label>
+      {{/each}}
+      <p class="result"></p>
+    </div>
+  </script>
+<script src="quiz.js"></script>
+
+</html>

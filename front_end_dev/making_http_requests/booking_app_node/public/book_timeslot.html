@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Book a time slot</title>
+  <meta charset="utf-8" />
+  <script src="/javascripts/book_timeslots.js"></script>
+  <style>
+    label {
+      margin-right: 3px;
+      margin-top: 5px;
+    }
+
+    select {
+      margin-bottom: 5px;
+    }
+
+    .new-student {
+      background-color: lightgrey;
+    }
+
+    form label {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    #submit-student {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Schedules</h1>
+  <form action="/api/bookings" method="POST" class="create-booking">
+    <label for="timeslot">Please select one schedule:</label>
+    <select id="timeslot" name="timeslot"></select>
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" name="email" />
+    <input type="submit">
+  </form>
+</body>
+
+</html>
