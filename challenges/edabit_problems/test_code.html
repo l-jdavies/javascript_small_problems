@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>your page title goes here</title>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script>
+    function arrayOfDigits(num) {
+      return num.toString().split('').map(digit => Number(digit));
+    }
+
+
+    function happy(num) {
+      let digits = arrayOfDigits(num);
+      let sumOfDigits = 0;
+
+      while (sumOfDigits !== 1 || sumOfDigits !== 4) {
+        sumOfDigits = digits.reduce((accum, current) => accum + (current ** 2), 0);
+        digits = arrayOfDigits(sumOfDigits);
+
+        if (sumOfDigits === 1) {
+          return true;
+        } else if (sumOfDigits === 4) {
+          return false;
+        }
+      }
+    }
+
+
+    console.log(happy(203)) 
+  </script>
+</body>
+
+</html>
