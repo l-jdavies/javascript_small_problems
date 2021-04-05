@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>your page title goes here</title>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script>
+    function makeCounterLogger(startNum) {
+      return function (secondNum) {
+        if (startNum > secondNum) {
+          let loggedNum = startNum;
+          while (loggedNum > secondNum) {
+            console.log(loggedNum);
+            loggedNum -= 1;
+          }
+        } else {
+          let loggedNum = secondNum;
+          while (loggedNum > startNum) {
+            console.log(loggedNum);
+            loggedNum += 1;
+          }
+        }
+
+      }
+    }
+
+    let countlog = makeCounterLogger(5);
+    console.log(countlog(8));
+//    countlog(2);
+  </script>
+</body>
+
+</html>
